@@ -1,0 +1,89 @@
+############################################
+# .NET / Visual Studio
+############################################
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+AnyCPU/
+
+############################################
+# Visual Studio / Rider / VS Code
+############################################
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+############################################
+# Logs / temporários
+############################################
+*.log
+*.tmp
+*.temp
+*.bak
+*.old
+
+############################################
+# MAUI / Xamarin / Android / iOS
+############################################
+**/Platforms/Android/.gradle/
+**/Platforms/Android/build/
+**/Platforms/Android/local.properties
+**/Platforms/Android/*.keystore
+**/Platforms/Android/*.jks
+
+**/Platforms/iOS/Pods/
+**/Platforms/iOS/DerivedData/
+**/Platforms/iOS/*.xcuserstate
+
+**/Platforms/MacCatalyst/DerivedData/
+
+############################################
+# Cache NuGet
+############################################
+.nuget/
+packages/
+
+############################################
+# Publicação
+############################################
+publish/
+*.appx
+*.msix
+*.msixbundle
+*.appinstaller
+
+############################################
+# Arquivos de ambiente / segredos
+############################################
+.env
+.env.*
+secrets.json
+appsettings.Development.json
+appsettings.Local.json
+
+############################################
+# 🔐 GROQ / IA (NÃO VERSIONAR)
+############################################
+
+# Service com chave hardcoded (seu caso atual)
+GroqWordSearchService.cs
+
+# Qualquer variação
+*Groq*.cs
+*groq*.cs
+*Groq*.json
+*groq*.json
+
+############################################
+# Outros
+############################################
+Thumbs.db
+.DS_Store

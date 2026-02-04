@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application
+    x:Class="CacaPalavrasIA.App"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Bg">#FFF7FB</Color>
+            <Color x:Key="Card">#FFFFFF</Color>
+            <Color x:Key="Stroke">#E8DFF2</Color>
+            <Color x:Key="Text">#2B2B2B</Color>
+            <Color x:Key="Purple">#7A5CFF</Color>
+            <Color x:Key="SoftPurple">#EFEAFF</Color>
+            <Color x:Key="Green">#38B000</Color>
+            <Color x:Key="SoftGreen">#E9F8E6</Color>
+            <Color x:Key="Red">#D90429</Color>
+            <Style TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource Text}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

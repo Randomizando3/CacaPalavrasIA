@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CacaPalavrasIA.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:CacaPalavrasIA.Views"
+    BackgroundColor="{DynamicResource Bg}"
+    Title="Caça-Palavras IA">
+
+    <Grid Padding="14" RowSpacing="12" ColumnSpacing="12">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Esquerda: Caça-palavras -->
+        <StackLayout Grid.Column="0" Spacing="10">
+            <Label Text="🐾 Caça-Palavras dos Animais"
+                   FontSize="24"
+                   FontAttributes="Bold" />
+
+            <Border Stroke="{DynamicResource Stroke}"
+                    StrokeThickness="2"
+                    BackgroundColor="{DynamicResource Card}"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="12">
+
+                <StackLayout Spacing="10">
+                    <Label x:Name="InstructionLabel"
+                           Text="Carregando..."
+                           FontSize="18"
+                           FontAttributes="Bold"
+                           TextColor="{DynamicResource Purple}" />
+
+                    <views:WordSearchBoard x:Name="Board"
+                                           HeightRequest="420" />
+                </StackLayout>
+            </Border>
+
+            <Label x:Name="StatusLabel"
+                   Text=""
+                   FontSize="14"
+                   TextColor="{DynamicResource Text}" />
+        </StackLayout>
+
+        <!-- Direita: gabarito + webview -->
+        <StackLayout Grid.Column="1" Spacing="12">
+
+            <Border Stroke="{DynamicResource Stroke}"
+                    StrokeThickness="2"
+                    BackgroundColor="{DynamicResource Card}"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="12">
+
+                <StackLayout Spacing="8">
+                    <Label Text="✅ Gabarito"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+
+                    <CollectionView x:Name="WordsList" HeightRequest="160">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnSpacing="8" Padding="6">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="22" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label Text="{Binding FoundIcon}" FontSize="18" />
+                                    <Label Grid.Column="1"
+                                           Text="{Binding Word}"
+                                           FontAttributes="Bold"
+                                           FontSize="16" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                    <Button x:Name="NewPuzzleBtn"
+                            Text="🔄 Novo Caça-Palavras (IA)"
+                            Clicked="OnNewPuzzleClicked"
+                            BackgroundColor="{DynamicResource Purple}"
+                            TextColor="White"
+                            CornerRadius="16"
+                            Padding="12" />
+                </StackLayout>
+            </Border>
+
+            <Border Stroke="{DynamicResource Stroke}"
+                    StrokeThickness="2"
+                    BackgroundColor="{DynamicResource Card}"
+                    StrokeShape="RoundRectangle 18"
+                    Padding="12">
+
+                <StackLayout Spacing="8">
+                    <Label Text="🔎 Ver o animal (Google)"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+
+                    <WebView x:Name="AnimalWeb"
+                             HeightRequest="360" />
+                </StackLayout>
+            </Border>
+
+        </StackLayout>
+    </Grid>
+</ContentPage>
